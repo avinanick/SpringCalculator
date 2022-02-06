@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-// const client = require('./client'); // Not sure what this is for yet
+const client = require('./client'); // Not sure what this is for yet
 
 class App extends React.Component {
 
@@ -10,13 +10,37 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		
+		client({method: 'GET', path: '/api'}).done(response => {
+			this.setState({employees: response.entity._embedded.employees});
+		});
 	}
 
 	render() {
 		return (
-			<EmployeeList employees={this.state.employees}/>
+			<CalculatorFace/>
 		)
 	}
+
+}
+
+class CalculatorFace extends React.Component {
+    render() {
+        return (
+            <div>
+
+            </div>
+        )
+    }
+}
+
+class CalculatorDisplay extends React.Component {
+
+}
+
+class CalculatorKeypad extends React.Component {
+
+}
+
+class CalculatorButton extends React.Component {
 
 }

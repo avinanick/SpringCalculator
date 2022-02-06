@@ -26,15 +26,16 @@ class App extends React.Component {
 class CalculatorFace extends React.Component {
     render() {
         return (
-            <div>
-
+            <div className="calc_face">
+                <CalculatorDisplay/>
+                <CalculatorKeypad/>
             </div>
         )
     }
 }
 
 class CalculatorDisplay extends React.Component {
-
+    
 }
 
 class CalculatorKeypad extends React.Component {

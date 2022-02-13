@@ -27,21 +27,28 @@ class CalculatorFace extends React.Component {
     render() {
         return (
             <div className="calc_face">
-                <CalculatorDisplay/>
+                <CalculatorOptions/>
                 <CalculatorKeypad/>
             </div>
         )
     }
 }
 
-class CalculatorDisplay extends React.Component {
-    
+class CalculatorOptions extends React.Component {
+    render() {
+        return (
+            <div className = "options">
+                <MatrixInput/>
+                <MatrixInput/>
+            </div>
+        )
+    }
 }
 
-class CalculatorKeypad extends React.Component {
+class MatrixInput extends React.Component {
 
 }
 
-class CalculatorButton extends React.Component {
+class MatrixOutput extends React.Component {
 
 }

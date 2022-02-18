@@ -28,13 +28,18 @@ class CalculatorFace extends React.Component {
         return (
             <div className="calc_face">
                 <CalculatorOptions/>
-                <CalculatorKeypad/>
+                <MatrixOutput/>
             </div>
         )
     }
 }
 
 class CalculatorOptions extends React.Component {
+    constructor(props) {
+		super(props);
+		this.state = {};
+	}
+    
     render() {
         return (
             <div className = "options">
@@ -47,6 +52,34 @@ class CalculatorOptions extends React.Component {
 
 class MatrixInput extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {width: 0,
+                height: 0,
+                inputs: []}
+        this.state.inputs = new Array(this.state.width);
+        for (let i = 0; i < this.state.width; i++) {
+            this.state.inputs[i] = new Array(this.state.height);
+        }
+    }
+
+    render() {
+        const inputsDisplay = [];
+
+        for (let i = 0; i < this.state.height; i++) {
+            const row = [];
+            for (let j = 0; j < this.state.width; j++) {
+                row.push(<div className="matrix_item">{this.state.inputs[i][j]}</div>);
+            }
+            inputsDisplay.push(<div className="matrix_row">{row}</div>);
+        }
+
+        return (
+            <div className = "matrix_input">
+                {inputsDisplay}
+            </div>
+        )
+    }
 }
 
 class MatrixOutput extends React.Component {

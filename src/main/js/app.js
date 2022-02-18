@@ -35,11 +35,14 @@ class CalculatorFace extends React.Component {
 }
 
 class CalculatorOptions extends React.Component {
+    // This is currently only being used for multiplication, so the
+    // options don't actually do anything yet. Should I get the matrix
+    // dimensions here or in the matrix input component
     constructor(props) {
 		super(props);
 		this.state = {};
 	}
-    
+
     render() {
         return (
             <div className = "options">
@@ -78,6 +81,19 @@ class MatrixInput extends React.Component {
             <div className = "matrix_input">
                 {inputsDisplay}
             </div>
+        )
+    }
+}
+
+class MatrixOptions extends React.Component {
+
+    constructor(props) {
+
+    }
+
+    render() {
+        return (
+            <div className = "matrix_options"></div>
         )
     }
 }
